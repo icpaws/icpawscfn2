@@ -19,12 +19,12 @@ pipeline {
         }
         stage('terraform init') {
             steps {
-                sh 'terraform init /var/jenkins_home/workspace/AWS/icpawsterraformdemo'
+                sh 'terraform init /var/jenkins_home/workspace/AWS/icpawsterraformdemo/icpawscfn'
             }
         }
         stage('terraform plan') {
             steps {
-                sh 'ls /var/jenkins_home/workspace/AWS/icpawsterraformdemo; terraform plan /var/jenkins_home/workspace/AWS/icpawsterraformdemo'
+                sh 'ls /var/jenkins_home/workspace/AWS/icpawsterraformdemo/icpawscfn; terraform plan /var/jenkins_home/workspace/AWS/icpawsterraformdemo/icpawscfn'
             }
         }
         stage('terraform ended') {
