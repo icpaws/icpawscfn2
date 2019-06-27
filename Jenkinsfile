@@ -27,9 +27,10 @@ pipeline {
                 sh 'ls /var/jenkins_home/workspace/AWS/icpawsterraformdemo/icpawscfn; terraform plan /var/jenkins_home/workspace/AWS/icpawsterraformdemo/icpawscfn'
             }
         }
-        stage('terraform ended') {
+        stage('terraform apply') {
             steps {
                 sh 'echo "Ended....!!"'
+                // sh 'terraform apply -auto-approve'
             }
         }
 
