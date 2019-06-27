@@ -26,6 +26,7 @@ resource "aws_instance" "web" {
     Name = "HelloWorld"
   }
 }
+
 output "ip"{
 value= "${aws_instance.web.public_ip}"
 }
