@@ -30,7 +30,7 @@ pipeline {
         stage('terraform apply') {
             steps {
                 sh 'echo "Ended....!!"'
-                sh 'terraform apply -auto-approve'
+                sh 'terraform apply -auto-approve /var/jenkins_home/workspace/AWS/icpawsterraformdemo/icpawscfn'
             }
         }
 
