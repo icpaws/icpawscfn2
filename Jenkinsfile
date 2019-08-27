@@ -14,23 +14,23 @@ pipeline {
         }
         stage('git clone') {
             steps {
-                sh 'rm -r *;git clone https://github.com/icpaws/icpawscfn.git'
+                sh 'rm -r *;git clone https://github.com/icpaws/icpawscfn2.git'
             }
         }
         stage('terraform init') {
             steps {
-                sh 'terraform init /var/jenkins_home/workspace/AWS/icpawsterraformdemo/icpawscfn'
+                sh 'terraform init /var/jenkins_home/workspace/AWS/build_icpawsterraformdem'
             }
         }
         stage('terraform plan') {
-            steps {
-                sh 'ls /var/jenkins_home/workspace/AWS/icpawsterraformdemo/icpawscfn; terraform plan /var/jenkins_home/workspace/AWS/icpawsterraformdemo/icpawscfn'
+            steps {               
+                sh 'ls /var/jenkins_home/workspace/AWS/build_icpawsterraformdemo; terraform plan /var/jenkins_home/workspace/AWS/build_icpawsterraformdemo'
             }
         }
         stage('terraform apply') {
             steps {
                 sh 'echo "Ended....!!"'
-                sh 'terraform apply -auto-approve /var/jenkins_home/workspace/AWS/icpawsterraformdemo/icpawscfn'
+                sh 'terraform apply -auto-approve /var/jenkins_home/workspace/AWS/build_icpawsterraformdemo'
             }
         }
 
