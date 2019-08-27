@@ -19,7 +19,7 @@ pipeline {
         }
         stage('terraform init') {
             steps {
-                sh 'terraform init /var/jenkins_home/workspace/AWS/build_icpawsterraformdem/icpawscfn2'
+                sh 'terraform init /var/jenkins_home/workspace/AWS/build_icpawsterraformdemo/icpawscfn2'
             }
         }
         stage('terraform plan') {
