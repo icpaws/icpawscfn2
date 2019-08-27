@@ -19,18 +19,18 @@ pipeline {
         }
         stage('terraform init') {
             steps {
-                sh 'terraform init /var/jenkins_home/workspace/AWS/build_icpawsterraformdem'
+                sh 'terraform init /var/jenkins_home/workspace/AWS/build_icpawsterraformdem/icpawscfn2'
             }
         }
         stage('terraform plan') {
             steps {               
-                sh 'ls /var/jenkins_home/workspace/AWS/build_icpawsterraformdemo; terraform plan /var/jenkins_home/workspace/AWS/build_icpawsterraformdemo'
+                sh 'ls /var/jenkins_home/workspace/AWS/build_icpawsterraformdemo/icpawscfn2; terraform plan /var/jenkins_home/workspace/AWS/build_icpawsterraformdemo/icpawscfn2'
             }
         }
         stage('terraform apply') {
             steps {
                 sh 'echo "Ended....!!"'
-                sh 'terraform apply -auto-approve /var/jenkins_home/workspace/AWS/build_icpawsterraformdemo'
+                sh 'terraform apply -auto-approve /var/jenkins_home/workspace/AWS/build_icpawsterraformdemo/icpawscfn2'
             }
         }
 
