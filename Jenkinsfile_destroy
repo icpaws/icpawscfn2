@@ -15,7 +15,7 @@ pipeline {
         stage('terraform destroy') {
             steps {
                 sh 'echo "Ended....!!"'
-                sh 'terraform destroy -auto-approve /var/jenkins_home/workspace/AWS/icpawsterraformdemo/icpawscfn'
+                sh 'terraform destroy -auto-approve /var/jenkins_home/workspace/AWS/build_icpawsterraformdemo/icpawscfn2/'
             }
         }
 
